@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Booking</title>
+    <link rel="stylesheet" href="appoint.css">
+</head>
+<body>
+    <div class="container">
+        <div class="searchHospitals">
+            <input type="text" id="locationInput" placeholder="Enter your location">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div id="hospitalResults" class="results"></div>
+
+        <div class="details">
+            <div class="name">
+                <p>Name: </p>
+                <input type="text" id="hospitalName">
+            </div>
+
+            <div class="phone">
+                <p>Phone Number: </p>
+                <input type="text" id="hospitalPhone">
+            </div>
+
+            <div class="timings">
+                <p>Slot Timings: </p>
+                <input type="time" id="hospitalTimings" >
+            </div>
+
+            <div class="illness">
+                <p>Enter your illness description: </p>
+                <input type="text" id="illnessDescription">
+            </div>
+        </div>
+
+        <div class="book-btn">
+            <button id="confirmBookingButton">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script src="appoint.js"></script>
+</body>
+</html>

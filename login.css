@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    height: 20rem;
+    width: 30rem;
+    border-radius: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container .header {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .input {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem;
+    margin-top: 3rem;
+}
+
+.container .input input {
+    margin: 1rem;
+    width: 70%;
+    padding-left: 0.7rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.container .btn {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .btn button {
+    margin-top: 3rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    background-color: #b4f779;
+    border: none;
+}
+
+.container .btn button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.container .signUp {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container .signUp a {
+    text-decoration: underline;
+    color: #640085;    
+}
+
+.success-login {
+    display: none;
+    text-align: center;
+    border-radius: 1.5rem;
+    margin-top: 2rem;
+    height: 5rem;
+    width: 15%;
+    background-color: #b4f779;
+    border: none;
+}
+
+.success-login p{
+    position: relative;
+    top: 1.7rem;
+}
+
+.back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    border: 1px solid #000;
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.back i {
+    font-size: 2rem;
+}

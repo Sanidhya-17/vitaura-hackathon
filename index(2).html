@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <button id="download-tasks" style="display: none;">Download Tasks</button>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    document.getElementById("download-tasks").style.display = "block"; // Show download button
+                } else {
+                    alert(`Error: ${result.message}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while processing your request.');
+            }
+        });
+
+        document.getElementById("download-tasks").addEventListener("click", async function() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/export', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'tasks.xlsx';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    alert('Tasks exported successfully!');
+                } else {
+                    alert('Failed to export tasks.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while exporting tasks.');
+            }
+        });
+    </script>
+</body>
+</html>

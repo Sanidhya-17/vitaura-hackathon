@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color:#fff;
+}
+
+.header {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo {
+    margin: 5rem;
+}
+
+.header .links {
+    margin: 5rem;
+}
+
+.header .links a {
+    padding: 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.header .searchBox {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 1.5rem;
+}
+
+.header button{
+    height: 2.5rem;
+    width: 28rem;
+    border: 1px solid #000;
+    border-radius: 1.5rem;
+    padding: 10px;
+}
+
+.header .menu {
+    margin-left: 2rem;
+}
+
+.header .signup {
+    width: 14rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .signup button {
+    font-size: 1rem;
+    height: 2rem;
+    width: 11rem;
+    margin: 0px 10px 0px 10px;
+    border-radius: 1rem;
+    border: 1px solid #000;
+}
+
+.header .menu {
+    font-size: 1.5rem;
+}
+
+.sideBar {
+    width: 20%;
+    margin-left: 1rem;
+    background: transparent;
+    list-style-type: none;
+    padding: 20px;
+    border-radius: 1rem;
+    animation: slide 0.8s ease-in-out 1;
+    display: none;
+    background-color: #fff;
+    position: relative;
+    top: 2rem;
+    z-index: 10;
+}
+
+@keyframes slide {
+    0%{
+        transform: translateX(-20rem);
+    }
+
+    100%{
+        transform: translateX(end);
+    }
+}
+
+.sideBar li {
+    margin: 3rem;
+}
+
+.sideBar li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.container {
+    height: 35rem;
+    width: 100%;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(image.png);
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    position: absolute;
+    top: 6rem;
+    text-align: center;
+}
+
+.container .para {
+    height: 20rem;
+    width: 40%;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 4rem;
+}
+
+.container .heading {
+    color: #fff;
+}
+
+.container .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: appear 1.5s ease-in-out 1;
+}
+
+@keyframes appear {
+    0% {
+        transform: translateX(-60rem);
+    }
+
+    100% {
+        transform: translateX(end);
+    }
+}
+
+.container .more button{
+    height: 3rem;
+    width: 8rem;
+    background-color: #f75c31;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 1.5rem;
+}
+
+.main-sec {
+    position: absolute;
+    top: 43rem;
+    display: flex;
+    justify-content: space-evenly;
+    height: 30rem;
+    width: 100%;
+    border: none
+}
+
+.main-sec #main-sub {
+    height: 25rem;
+    width: 30%;
+    margin: 2rem;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.main-sec #main-sub .logo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.main-sec #main-sub p {
+    text-align: center;
+}
+
+.main-sec #main-sub .logo i {
+    font-size: 3rem;
+}
+
+.main-sec #main-sub .title {
+    text-align: center;
+    margin: 1rem;
+}
+
+.chat-bot {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 70rem;
+}
+
+#chatContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    max-width: 80%;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #eee;
+}
